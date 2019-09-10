@@ -39,5 +39,21 @@
   }
 ?>
 <body>
-  
+  <div id="err">
+<?php
+  foreach ($errmsg as $val) {
+    echo $val . "<br/>";
+  }
+?>
+  </div>
+<?php
+  if (count($errmsg)) {
+?>
+  <div><br/><a href="rei06.html">アップロード指定に戻る</a></div>
+<?php
+  } else {
+?>
+  アップロード成功！<br/>
+  <?= $filename?>をアップロードしました
+  <?php } ?>
 </body>
