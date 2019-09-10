@@ -23,15 +23,7 @@
       }
       elseif ($_FILES["upfile"]["size"] == 0) {
         $errmsg[] = "指定されたファイルが存在しないか空です";
-      }
-      else {
-        $movepath = "img/" . mb_convert_encoding($_FILES["upfile"]["tmp_name"], $movepath);
-        $moveok = move_uploaded_file($_FILES["upfile"]["tmp_name"], $movepath);
-
-        if (!$moveok) {
-          $errmsg[] = "アップロードに失敗しました";
-        }
-      }
+      } 
     }
   }
   else {
@@ -54,6 +46,6 @@
   } else {
 ?>
   アップロード成功！<br/>
-  <?= $filename?>をアップロードしました
+  <?= $filename ?>をアップロードしました
   <?php } ?>
 </body>
