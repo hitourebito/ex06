@@ -8,7 +8,7 @@
   <title>rei06.php</title>
 </head>
 <?php
-  $errmsg[] = array();
+  $errmsg = array();
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (strlen($_FILES["upfile"]["name"]) <= 0) {
