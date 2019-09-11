@@ -18,8 +18,8 @@
       $filename = $_FILES["upfile"]["name"];
       $fileinfo = pathinfo($filename);
       $ext = strtolower($fileinfo["extension"]);
-      if ($ext != "txt" && $ext != "ini") {
-        $errmsg[] = "textかiniのファイルを指定してください";
+      if ($ext != "jpg" && $ext != "gif" && $ext != "bmp") {
+        $errmsg[] = "jpgかgifかbmpファイルを指定してください";
       }
       elseif ($_FILES["upfile"]["size"] == 0) {
         $errmsg[] = "指定されたファイルが存在しないか空です";
@@ -50,17 +50,12 @@
 <?php
   if (count($errmsg)) {
 ?>
-  <div><br/><a href="ex06_01.html">アップロード指定に戻る</a></div>
+  <div><br/><a href="ex06_02.html">アップロード指定に戻る</a></div>
 <?php
  } else {
 ?>
   アップロード成功！<br/>
   <?= $filename ?>をアップロードしました<br/>
-  <?php 
-    print_r($_FILES); 
-    echo "<br/>";
-    print_r(pathinfo($_FILES["upfile"]["name"]));
-  ?>
 
 <?php 
   } 
