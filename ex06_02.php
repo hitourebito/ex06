@@ -57,8 +57,10 @@
  } else {
 ?>
   アップロード成功！<br/>
-  <?= $filename ?>をアップロードしました<br/>
 
+  <?= $filename ?>をアップロードしました<br/>
+  
+  <?= $_POST["comment"] ?>
 <?php 
   } 
 ?>
