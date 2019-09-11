@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-store">
-  <meta http-equiv="Expires" content = "0">
-  <title>ex06_03.php</title>
-</head>
 <?php
   $errmsg = array();
 
@@ -39,11 +30,32 @@
   }
   else {
 ?>
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta http-equiv="Expires" content = "0">
+  <title>ex06_03.php</title>
+</head>
+<body>
+  <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST" enctype="multipart/form-data">
+    <div>
+      <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+      アップロードする画像ファイル名とコメントを入力してください<br/><br/>
+      ファイル:
+      <input type="file" name="upfile" size="60">
+      <br/><br/>
+      コメント:
+      <input type="text" name="comment" size="60">
+      <br/><br/>
+      <input type="submit" name="btn" value="アップロード">
+    </div>
+  </form>
 <?php
   }
 ?>
-<body>
   <div id="err">
 <?php
   foreach ($errmsg as $val) {
@@ -56,7 +68,7 @@
 ?>
   <div><br/><a href="ex06_03.php">アップロード指定に戻る</a></div>
 <?php
- } else {
+ } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
   アップロード成功！<br/>
 
