@@ -5,7 +5,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-store">
   <meta http-equiv="Expires" content = "0">
-  <title>rei06.php</title>
+  <title>ex06_01.php</title>
 </head>
 <?php
   $errmsg = array();
@@ -50,11 +50,19 @@
 <?php
   if (count($errmsg)) {
 ?>
-  <div><br/><a href="rei06.html">アップロード指定に戻る</a></div>
+  <div><br/><a href="ex06_01.html">アップロード指定に戻る</a></div>
 <?php
  } else {
 ?>
   アップロード成功！<br/>
-  <?= $filename ?>をアップロードしました
-  <?php } ?>
+  <?= $filename ?>をアップロードしました<br/>
+  <?php 
+    print_r($_FILES); 
+    echo "<br/>";
+    print_r(pathinfo($_FILES["upfile"]["name"]));
+  ?>
+
+<?php 
+  } 
+?>
 </body>
