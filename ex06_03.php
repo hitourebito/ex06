@@ -5,7 +5,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-store">
   <meta http-equiv="Expires" content = "0">
-  <title>ex06_02.php</title>
+  <title>ex06_03.php</title>
 </head>
 <?php
   $errmsg = array();
@@ -52,7 +52,7 @@
 <?php
   if (count($errmsg)) {
 ?>
-  <div><br/><a href="ex06_02.html">アップロード指定に戻る</a></div>
+  <div><br/><a href="ex06_03.php">アップロード指定に戻る</a></div>
 <?php
  } else {
 ?>
