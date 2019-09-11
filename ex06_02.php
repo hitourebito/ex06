@@ -30,9 +30,11 @@
           $filename = mb_convert_encoding($filename, "SJIS", "UTF-8");
         }
       }
-
-      $movepath = "img/" . $filename;
-      $moveok = move_uploaded_file($_FILES["upfile"]["tmp_name"], $movepath);
+      
+      if ($ext == "jpg" || $ext == "gif" || $ext == "bmp") {
+        $movepath = "img/" . $filename;
+        $moveok = move_uploaded_file($_FILES["upfile"]["tmp_name"], $movepath);
+      }
     }
   }
   else {
