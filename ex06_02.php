@@ -59,7 +59,7 @@
   アップロード成功！<br/>
 
   <?= $filename ?>をアップロードしました<br/>
-  
+  <?php echo '<img width="50%" height="50%" src="img/' . $filename . '" /><br />'; ?>
   <?= $_POST["comment"] ?>
 <?php 
   } 
