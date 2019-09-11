@@ -23,7 +23,16 @@
       }
       elseif ($_FILES["upfile"]["size"] == 0) {
         $errmsg[] = "指定されたファイルが存在しないか空です";
-      } 
+      }
+
+      if ((int)PHP_VERSION < 7) {
+        if (strncmp(strtoupper(PHP_OS), "WIN", 3) == 0) {
+          $filename = mb_convert_encoding($filename, "SJIS", "UTF-8");
+        }
+      }
+
+      $movepath = "img/" . $filename;
+      $moveok = move_uploaded_file($_FILES["upfile"]["tmp_name"], $movepath);
     }
   }
   else {
@@ -43,7 +52,7 @@
 ?>
   <div><br/><a href="rei06.html">アップロード指定に戻る</a></div>
 <?php
-  } else {
+ } else {
 ?>
   アップロード成功！<br/>
   <?= $filename ?>をアップロードしました
